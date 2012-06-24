@@ -16,6 +16,7 @@ end
 
 group :development, :test do
   gem 'capistrano'
+  gem 'rspec-rails'
   gem 'sqlite3'
 
   # To use debugger
