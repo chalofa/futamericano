@@ -26,6 +26,7 @@ group :development, :test do
   gem 'fabrication'
   gem 'faker'
   gem 'heroku'
+  gem 'rspec-rails'
   gem 'sqlite3'
 
   # To use debugger
@@ -33,10 +34,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
   gem 'fivemat'
-  gem 'rspec-rails'
   gem 'simplecov', :require => false
 end
 
