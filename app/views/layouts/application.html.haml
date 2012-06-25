@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    = render 'layouts/head'
+
+  %body
+    = render 'layouts/header'
+
+    #container
+      #content
+        = yield
+
+      %footer#bottom
+        = render 'layouts/footer'

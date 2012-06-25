@@ -1,0 +1,17 @@
+#pre_header.container
+
+%header#top
+  .left_background
+  .right_background
+
+  #top_header.container
+    = sprite_link_to('FutAmericano.com', root_path, :id => :logo)
+
+    %nav#menu
+      = render 'shared/menu'
+
+      %section#social_buttons
+        = render 'shared/like_button'
+
+    #sub_menu
+      = yield :sub_menu
