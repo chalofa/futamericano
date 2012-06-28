@@ -1,0 +1,140 @@
+es:
+  resources:
+    teams:    "equipos"
+  resource:
+    scores:   "tablero"
+    standings: "posiciones"
+    contacts: "contacto"
+    channels: "guia_tv"
+  named_routes_path:
+    home:     "inicio"
+  path_names:
+    new:      "nuevo"
+    edit:     "editar"
+
+  Home:       "Inicio"
+  Teams:      "Equipos"
+  Games:      "Juegos"
+  Scoreboard: "Scoreboard"
+  Schedule:   "Calendario"
+  Standings:  "Posiciones"
+  Stats:      "Estadísticas"
+  News:       "Noticias"
+  Contact:    "Contacto"
+  TV Guide:   "Guía de TV"
+
+  days:       "días"
+  sidebar:    "Barra lateral"
+  terms:      "Términos de uso"
+
+  show:       "Mostrar"
+  edit:       "Editar"
+  destroy:    "Borrar"
+  you_sure:   "¿Estás seguro?"
+
+  week_types:
+    REG:      "Regular"
+    PRE:      "Pretemporada"
+    POST:     "Playoffs"
+    SB:       "Super Bowl"
+    PRO:      "PRO Bowl"
+    week_18:  "Comodines"
+    week_19:  "Divionales"
+    week_20:  "Conferencia"
+
+  months:
+    separator: " de "
+    January:  "Enero"
+    February: "Febrero"
+    March:    "Marzo"
+    April:    "Abril"
+    May:      "Mayo"
+    June:     "Junio"
+    July:     "Julio"
+    August:   "Agosto"
+    September: "Septiembre"
+    October:  "Octubre"
+    November: "Noviembre"
+    December: "Diciembre"
+
+  short_months:
+    Jan:      "Ene"
+    Feb:      "Feb"
+    Mar:      "Mar"
+    Apr:      "Abr"
+    May:      "May"
+    Jun:      "Jun"
+    Jul:      "Jul"
+    Aug:      "Ago"
+    Sep:      "Sep"
+    Oct:      "Oct"
+    Nov:      "Nov"
+    Dec:      "Dic"
+
+  week_days:
+    Sunday:   "Domingo"
+    Monday:   "Lunes"
+    Tuesday:  "Martes"
+    Wednesday: "Miércoles"
+    Thursday: "Jueves"
+    Friday:   "Viernes"
+    Saturday: "Sábado"
+
+
+  states:
+    finished: "Final"
+    pending:  "Pendiente"
+    active:   "Jugando"
+    disabled: "Cancelado"
+
+  game:
+    clock_title: "Tiempo restante en el cuarto"
+    and:        "&"
+
+  team:
+    full_name:  "%{name} de %{city}"
+    listing:    "Listado de equipos"
+    new:        "Nuevo equipo"
+
+  standings:
+    Standings:  "Posiciones"
+    AFC:        "Conferencia Americana"
+    NFC:        "Conferencia Nacional"
+    North:      "Norte"
+    South:      "Sur"
+    East:       "Este"
+    West:       "Oeste"
+    w:          "G"
+    won:        "Ganados"
+    l:          "P"
+    lost:       "Perdidos"
+    t:          "E"
+    tied:       "Empatados"
+    avg:        "%"
+    average:    "Porcentaje"
+    points_f:   "Puntos a Favor"
+    pf:         "PF"
+    points_a:   "Puntos en Contra"
+    pa:         "PC"
+
+  contact:
+    Contact:    "Contacto"
+    name:       "Nombre"
+    email:      "Correo electrónico"
+    message:    "Mensaje"
+    send:       "Enviar"
+    sending:    "Enviando..."
+    Your Name:  "Tu Nombre"
+    Your Email: "tu@email.com"
+    Your Message: "Agradecemos tus comentarios"
+    Other Contacts: "Otros Contactos:"
+    Thank you:  "<strong>Gracias por tus comentarios...</strong><br /> Estamos trabajando para responderte!"
+
+  channels:
+    TV Guide:   "Guía de TV"
+    week:       "Semana"
+    Empty:      "No hay juegos programados en TV para esta semana..."
+    Check Later: "Revisa esta guía después"
+
+  legal:
+    disclaimer: "Todos los logos y nombres son marcas registradas de cada equipo y la NFL®"
