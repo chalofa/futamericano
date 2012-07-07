@@ -1,0 +1,61 @@
+$default-purple: #141228
+$menu-color: white
+
+
+.background_blue
+  @extend .ui-bkg_blue
+  background-color: #0c3972
+  background-repeat: repeat-x
+
+.background_bottom
+  background: image-url('bkgs/bottom_lines.png') repeat-x bottom left
+
+.background_field
+  background: image-url('bkgs/field_lines.png') repeat
+
+.background_gradient
+  +background-size(cover)
+  background: image-url('bkgs/gradient.png') center center fixed no-repeat
+
+.background_grass
+  background: #658A3A image-url('bkgs/field.png') repeat
+
+.background_red
+  @extend .ui-bkg_red
+  background-color: #bc0020
+  background-repeat: repeat-x
+
+.background_squares
+  background: white image-url('bkgs/squares.png') repeat
+
+.dark_section
+  background-color: #333
+  color: #ccc
+
+.hide_me
+  display: none
+
+.hover_link
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+.menu_background
+  height: 60px
+  position: absolute
+  width: 50%
+  z-index: 1
+
+.menu_text, .menu_text a
+  color: $menu-color
+  font-size: 17px
+  a:hover
+    color: #aaa
+    text-decoration: none
+
+@mixin custom_font($font_name)
+  font-family: $font_name, $default-fonts
+
+@mixin padding-top-bottom($measure)
+  padding-top:    $measure
+  padding-bottom: $measure
