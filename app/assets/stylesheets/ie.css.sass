@@ -1,0 +1,17 @@
+body
+
+  #container, .container
+    position: relative
+
+  *
+    //Do not use transparency... IE sucks!
+    filter: none !important
+
+  // Use IE filters for gradient background
+  background-image: none
+  // IE 7
+  filter:
+    progid: "DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bkgs/gradient.png', sizingMethod='scale')"
+  // IE 8
+  -ms-filter:
+    progid: "DXImageTransform.Microsoft.AlphaImageLoader(src='/assets/bkgs/gradient.png', sizingMethod='scale')"
