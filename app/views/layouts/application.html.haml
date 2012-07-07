@@ -6,9 +6,7 @@
   %body
     = render 'layouts/header'
 
-    #container
-      #content
-        = yield
+    %section#main
+      = yield
 
-      %footer#bottom
-        = render 'layouts/footer'
+    = render 'layouts/footer'
