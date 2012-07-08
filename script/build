@@ -17,9 +17,9 @@ which bundle > /dev/null || gem install bundler --re
 
 echo "-- Project dependencies"
 export DISPLAY=:0.0
-bundle install > $LOG_DIR 2>&1
-bundle exec rake db:reset > $LOG_DIR 2>&1
-bundle exec rake db:test:prepare > $LOG_DIR 2>&1
+bundle install > $LOG_DIR/bundle.log 2>&1
+bundle exec rake db:reset > $LOG_DIR/db_reset.log 2>&1
+bundle exec rake db:test:prepare > $LOG_DIR/test_prepare.log 2>&1
 
 echo "-- Running tests"
 bundle exec rake
