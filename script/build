@@ -4,5 +4,6 @@
 if [ -z $CC_RUBY ]; then CC_RUBY=1.9.3; fi
 
 # Initialize rbEnv
+eval "$(rbenv init -)"
 rbenv local $CC_RUBY
 ruby -v
