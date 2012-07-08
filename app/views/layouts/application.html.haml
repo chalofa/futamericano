@@ -6,7 +6,8 @@
   %body
     = render 'layouts/header'
 
-    %section#main
-      = yield
+    #main_wrapper
+      %section#main{class: controller_name}
+        = yield
 
     = render 'layouts/footer'

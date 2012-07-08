@@ -1,7 +1,8 @@
 // Layout
 body
-  section#main, #top_header, footer#bottom
+  #main_wrapper, #top_header, footer#bottom
     @extend .container
+    width: 950px // overwrite Bootstrap default grid size
 
 
 // Default elements
@@ -14,12 +15,12 @@ html
   @extend .background_grass
 body
   @extend .background_gradient
-#main
+#main_wrapper
   @extend .background_field
 
 
 // Footer on page' bottom
 html, body
   height: 100%
-#main
+#main_wrapper
   min-height: 100%
