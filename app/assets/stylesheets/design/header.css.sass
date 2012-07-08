@@ -1,5 +1,64 @@
-header#top
-  position: absolute
-
+// header height (for the absolute position)
 #main
   margin-top: 120px
+
+header#top, #top_header
+  @extend .background_squares
+  position: absolute
+  width: 100%
+
+#header_wrapper
+  position: relative
+
+header#top
+  @include box-shadow(black 0 0 40px)
+  height: 98px
+  padding-top: 12px
+  margin-top: 10px
+  #top_header
+    z-index: 1000
+  #logo
+    @extend .ui-logo, .float_left
+    background-image: image-url('ui/logo.png') // TODO: sprite
+    height: 66px
+    width: 379px
+
+
+  nav#menu
+    @extend .menu_text, .background_red, .float_right
+    width: 571px /* TODO: some way to improve this? */
+    line-height: 80px
+    height: 60px
+    text-transform: uppercase
+    text-align: right
+
+    > span
+      padding: 0 5px 0 10px
+      border-left: 2px solid #ddd
+      &:first-child
+        border-left: 0
+
+    section#social_buttons
+      @extend .float_right
+      margin: 0 15px 0 10px
+      line-height:  1em
+      min-width: 103px
+      .fb_placeholder
+        height: 20px
+        margin-top: 30px
+        // Hide FB pop-up
+        .fb_edge_widget_with_comment span.fb_edge_comment_widget iframe.fb_ltr
+          display: none !important
+      script
+        display: none
+
+  .left_background, .right_background
+    @extend .menu_background
+  .left_background
+    @extend .background_blue
+    left: 0
+  .right_background
+    @extend .background_red
+    right: 0
+
+

@@ -1,9 +1,11 @@
 $default-purple: #141228
+$menu-fonts: Cuprum, 'Helvetica Neue', Tahoma, 'Droid Sans', Helvetica, sans-serif
 $menu-color: white
 
 //TODO: use sprite-factory http://bit.ly/LVITtk
 .background_blue
   @extend .ui-bkg_blue
+  background: #658A3A image-url('ui/bkg_blue.png') repeat-x // TODO: sprite
   background-color: #0c3972
   background-repeat: repeat-x
 
@@ -22,6 +24,7 @@ $menu-color: white
 
 .background_red
   @extend .ui-bkg_red
+  background: #658A3A image-url('ui/bkg_red.png') repeat-x // TODO: sprite
   background-color: #bc0020
   background-repeat: repeat-x
 
@@ -31,6 +34,14 @@ $menu-color: white
 .dark_section
   background-color: #333
   color: #ccc
+
+.float_left
+  display: inline
+  float: left
+
+.float_right
+  display: inline
+  float: right
 
 .hide_me
   display: none
@@ -49,6 +60,7 @@ $menu-color: white
 .menu_text, .menu_text a
   color: $menu-color
   font-size: 17px
+  font-family: $menu-fonts
   a:hover
     color: #aaa
     text-decoration: none
