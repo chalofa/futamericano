@@ -3,6 +3,10 @@
 # Set default variables (if not before with ENV variables)
 if [ -z $CC_RUBY ]; then CC_RUBY=1.9.3; fi
 
+# Logs directory
+LOG_DIR="$CC_BUILD_ARTIFACTS/tmp"
+mkdir -p $LOG_DIR
+
 # Initialize rbEnv
 eval "$(rbenv init -)"
 rbenv local $CC_RUBY
@@ -13,11 +17,11 @@ which bundle > /dev/null || gem install bundler --re
 
 echo "-- Project dependencies"
 export DISPLAY=:0.0
-bundle install > /dev/null 2>&1
-bundle exec rake db:reset > /dev/null 2>&1
-bundle exec rake db:test:prepare > /dev/null 2>&1
+bundle install > $LOG_DIR 2>&1
+bundle exec rake db:reset > $LOG_DIR 2>&1
+bundle exec rake db:test:prepare > $LOG_DIR 2>&1
 
-echo "-- Build project"
+echo "-- Running tests"
 bundle exec rake
 EXIT_CODE=$?
 
