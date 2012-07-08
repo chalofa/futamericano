@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Set default variables (if not before with ENV variables)
+if [ -z $CC_RUBY ]; then CC_RUBY=1.9.3; fi
+
+# Initialize rbEnv
+rbenv local $CC_RUBY
+ruby -v
