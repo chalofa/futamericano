@@ -6,4 +6,19 @@ if [ -z $CC_RUBY ]; then CC_RUBY=1.9.3; fi
 # Initialize rbEnv
 eval "$(rbenv init -)"
 rbenv local $CC_RUBY
-ruby -v
+
+# Bundler installed?
+# TODO: remove the --pre after bundler version 1.2 is released
+which bundle > /dev/null || gem install bundler --re
+
+echo "-- Project dependencies"
+export DISPLAY=:0.0
+bundle install > /dev/null 2>&1
+bundle exec rake db:reset > /dev/null 2>&1
+bundle exec rake db:test:prepare > /dev/null 2>&1
+
+echo "-- Build project"
+bundle exec rake
+EXIT_CODE=$?
+
+exit $EXIT_CODE
