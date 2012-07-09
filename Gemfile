@@ -9,6 +9,8 @@ gem 'bootstrap-sass'
 gem 'haml-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'sprite-factory'
+  gem 'chunky_png'
 gem 'state_machine'
 
 
