@@ -4,6 +4,7 @@ gem 'rails', '~> 3.2'
 ruby '1.9.3'
 
 
+gem 'activeadmin'
 gem 'airbrake'
 gem 'bootstrap-sass'
 gem 'haml-rails'
