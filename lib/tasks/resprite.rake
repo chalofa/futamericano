@@ -11,10 +11,9 @@ namespace :assets do
     SpriteFactory.library = :chunkypng
     SpriteFactory.layout = :packed
     SpriteFactory.style = :sass
-    SpriteFactory.csspath = "<%= image_path('$IMAGE') %>"
 
     %w(ui).each do |group|
-      SpriteFactory.run!(images_dir.join(group), margin: 10, selector: ".#{group}-",
+      SpriteFactory.run!(images_dir.join(group), selector: ".#{group}-",
                          output_style: sprites_dir.join("#{group}.css.sass"),
                          output_image: output_dir.join("#{group}.png"))  do |images|
         images.reduce('') do |acum, (name, image)|
