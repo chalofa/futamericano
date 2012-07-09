@@ -65,6 +65,9 @@ module Futamericano
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
+    # Do not access the DB or load models when pre-compiling assets
+    config.assets.initialize_on_precompile = false
+
     # Sass as default CSS framework (instead of SCSS)
     config.sass.preferred_syntax = :sass
   end
