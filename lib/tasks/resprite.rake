@@ -12,7 +12,7 @@ namespace :assets do
     SpriteFactory.layout = :packed
     SpriteFactory.style = :sass
 
-    %w(ui).each do |group|
+    %w(ui teams teams_20 teams_40).each do |group|
       SpriteFactory.run!(images_dir.join(group), selector: ".#{group}-",
                          output_style: sprites_dir.join("#{group}.css.sass"),
                          output_image: output_dir.join("#{group}.png"))  do |images|
