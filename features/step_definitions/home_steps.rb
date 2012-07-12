@@ -25,6 +25,15 @@ Then /^(?:|I )should see the Soon counter$/ do
   end
 end
 
+Then /^(?:|I )should see the main Footer$/ do
+  within 'footer#bottom' do
+    pending '#TODO: change copyright year!' #TODO
+    page.should have_content('©2012.')
+    page.should have_content('FutAmericano.com.')
+    page.should have_content('Disclaimer')
+  end
+end
+
 Then /^(?:|I )should see the main Menu$/ do
   within 'header#top' do
     page.should have_selector('nav#menu')
