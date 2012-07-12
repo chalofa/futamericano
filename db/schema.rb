@@ -48,4 +48,22 @@ ActiveRecord::Schema.define(:version => 20120709161435) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "seasons", :force => true do |t|
+    t.integer  "year",       :default => 2011,       :null => false
+    t.string   "state",      :default => "disabled", :null => false
+    t.integer  "week_id"
+    t.integer  "team_id"
+    t.integer  "league_id"
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
+  end
+
+  add_index "seasons", ["league_id"], :name => "index_seasons_on_league_id"
+  add_index "seasons", ["state", "team_id"], :name => "index_seasons_on_state_and_team_id"
+  add_index "seasons", ["state"], :name => "index_seasons_on_state"
+  add_index "seasons", ["team_id"], :name => "index_seasons_on_team_id"
+  add_index "seasons", ["week_id"], :name => "index_seasons_on_week_id"
+  add_index "seasons", ["year", "state"], :name => "index_seasons_on_year_and_state"
+  add_index "seasons", ["year"], :name => "index_seasons_on_year", :unique => true
+
 end
