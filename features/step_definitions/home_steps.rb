@@ -38,7 +38,7 @@ Then /^(?:|I )should see the main Menu$/ do
   within 'header#top' do
     page.should have_selector('nav#menu')
     page.should have_content('Scoreboard')
-    page.should have_content('Standings')
-    page.should have_content('TV Guide')
+    page.should have_content('Posiciones')
+    page.should have_content('Guía de TV')
   end
 end
