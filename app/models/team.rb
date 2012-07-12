@@ -29,12 +29,12 @@ class Team < ActiveRecord::Base
     end
   end
 
-  #Return the Team full name (depend from i18n?)
+  # team full name (depend from i18n?)
   def full_name
     "#{city} #{name}"
   end
 
-  # Humanized output
+  # humanized output
   def to_s
     "#{full_name} (#{short})"
   end
