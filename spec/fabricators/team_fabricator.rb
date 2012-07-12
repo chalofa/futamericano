@@ -1,4 +1,4 @@
-Fabricator(:team) do
+Fabricator :team do
   area        { Faker::Address.state }
   city        { Faker::Address.city }
   name        { Faker::Name.first_name }
@@ -9,7 +9,7 @@ Fabricator(:team) do
   year        { (rand(30) + 15).years.ago.year }
 end
 
-Fabricator(:team_colts, from: :team, aliases: :team_default) do
+Fabricator :team_colts, from: :team, aliases: :team_default do
   name        'Colts'
   short       'IND'
   city        'Indianapolis'
