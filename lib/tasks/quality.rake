@@ -4,6 +4,7 @@ namespace :quality do
   task :rails_best_practices do
     system 'rails_best_practices --silent --without-color -o app,lib,config -x \.rake$,config/initializers/'
   end
+  task rbp: :rails_best_practices
 
   #desc 'Reek code quality metrics'
   task :reek do
