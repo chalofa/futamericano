@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 #-------------------------------------------------------------------------
-# Helper for general stuff
+#   Helper for general stuff
 #-------------------------------------------------------------------------
 
 module ApplicationHelper

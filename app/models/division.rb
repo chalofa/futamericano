@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------
-# Each of the 8 divisions of the league (AFC and NFC)
+#   Each of the 8 divisions of the league (AFC and NFC)
 #-------------------------------------------------------------------------
 
 class Division < ActiveRecord::Base

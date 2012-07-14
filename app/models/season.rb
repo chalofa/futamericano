@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------
-# Each year Season (preseason, regular and playoffs)
+#   Each year Season (preseason, regular and playoffs)
 #-------------------------------------------------------------------------
 
 class Season < ActiveRecord::Base

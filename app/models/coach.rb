@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------
-# Head Coach of each team on the league
+#   Head Coach of each team on the league
 #-------------------------------------------------------------------------
 
 class Coach < ActiveRecord::Base

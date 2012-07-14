@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------
-# Channels for games (TV and maybe radio)
+#   Channels for games (TV and maybe radio)
 #-------------------------------------------------------------------------
 
 class Channel < ActiveRecord::Base

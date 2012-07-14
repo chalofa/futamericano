@@ -1,4 +1,6 @@
-# Show a counter until season opener
+#-------------------------------------------------------------------------
+#   Shows a reverse counter until the season opener
+#-------------------------------------------------------------------------
 
 class SoonController < ApplicationController
 

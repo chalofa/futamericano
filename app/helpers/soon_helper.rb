@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------
-# Helper for the Soon counter until season opener
+#   Helper for the Soon counter until season opener
 #-------------------------------------------------------------------------
 
 module SoonHelper

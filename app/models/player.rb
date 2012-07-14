@@ -1,5 +1,5 @@
 #-------------------------------------------------------------------------
-# Data of each Player in the league
+#   Data of each Player in the league
 #-------------------------------------------------------------------------
 
 class Player < ActiveRecord::Base
