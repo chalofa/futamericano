@@ -32,13 +32,15 @@ end
 #
 # Table name: seasons
 #
-#  id         :integer(4)      not null, primary key
-#  year       :integer(4)      default(2011), not null
+#  id         :integer         not null, primary key
+#  year       :integer         default(2011), not null
 #  state      :string(255)     default("disabled"), not null
-#  week_id    :integer(4)
-#  team_id    :integer(4)
-#  league_id  :integer(4)
-#  created_at :datetime
-#  updated_at :datetime
+#  week_id    :integer
+#  team_id    :integer
+#  league_id  :integer
+#  created_at :datetime        not null
+#  updated_at :datetime        not null
+#  starts_at  :datetime
+#  ends_at    :datetime
 #
 
