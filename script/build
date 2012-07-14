@@ -14,6 +14,8 @@ rbenv local $CC_RUBY
 # Bundler installed?
 # TODO: remove the --pre after bundler version 1.2 is released
 which bundle > /dev/null || gem install bundler --re
+which rails_best_practices > /dev/null || gem install rails_best_practices
+which reek > /dev/null || gem install reek
 rbenv rehash
 
 echo "-- Project Dependencies"
@@ -29,7 +31,7 @@ EXIT_CODE=$?
 
 echo "-- Code Metrics"
 cp -r ./coverage $LOG_DIR/../
-which rails_best_practices > /dev/null || gem install rails_best_practices; rbenv rehash
+reek -q app lib
 rails_best_practices --silent --without-color -o app,lib,config -x \.rake$,config/initializers/
 
 exit $EXIT_CODE
