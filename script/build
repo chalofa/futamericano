@@ -18,18 +18,18 @@ which rails_best_practices > /dev/null || gem install rails_best_practices
 which reek > /dev/null || gem install reek
 rbenv rehash
 
-echo "-- Project Dependencies"
+echo -e "\n\n-- Project Dependencies"
 export DISPLAY=:0.0
 bundle install > $LOG_DIR/bundle.log 2>&1
 rbenv rehash
 bundle exec rake db:reset > $LOG_DIR/db_reset.log 2>&1
 bundle exec rake db:test:prepare > $LOG_DIR/test_prepare.log 2>&1
 
-echo "-- Running Tests..."
+echo -e "\n\n-- Running Tests..."
 bundle exec rake
 EXIT_CODE=$?
 
-echo "-- Code Metrics"
+echo -e "\n\n-- Code Metrics"
 cp -r ./coverage $LOG_DIR/../
 bundle exec rake quality
 reek -q app
