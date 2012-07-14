@@ -10,6 +10,13 @@ namespace :quality do
     system 'reek -q app'
   end
 
-  desc 'All code quality metrics'
-  task all: [:rails_best_practices]
+  desc 'Roodi code quality metrics'
+  task :roodi do
+    system 'roodi -config=config/roodi.yml app/**/*.rb lib/**/*.rb'
+  end
+
+  task all: [:rails_best_practices, :roodi]
 end
+
+desc 'Code quality metrics (all)'
+task quality: 'quality:all'
