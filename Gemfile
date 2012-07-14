@@ -30,6 +30,7 @@ group :development, :test do
   gem 'faker'
   gem 'heroku'
   gem 'rails_best_practices'
+  gem 'roodi'
   gem 'rspec-rails'
   gem 'sqlite3'
 
