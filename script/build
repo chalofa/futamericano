@@ -31,7 +31,7 @@ EXIT_CODE=$?
 
 echo "-- Code Metrics"
 cp -r ./coverage $LOG_DIR/../
-reek -q app lib
+reek -q app
 rails_best_practices --silent --without-color -o app,lib,config -x \.rake$,config/initializers/
 
 exit $EXIT_CODE
