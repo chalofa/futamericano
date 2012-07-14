@@ -25,4 +25,8 @@ echo "-- Running tests"
 bundle exec rake
 EXIT_CODE=$?
 
+echo "-- Metrics"
+which rails_best_practices > /dev/null || gem install rails_best_practices; rbenv rehash
+rails_best_practices --with-git -o app,lib,config -x \.rake$,config/initializers/
+
 exit $EXIT_CODE
