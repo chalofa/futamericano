@@ -2,7 +2,7 @@ module CommonStates
 
   def self.included(base)
     base.class_eval do
-      state_machine :state, :initial => :disabled do
+      state_machine :state, initial: :disabled do
         state :active
         state :disabled
         state :pending

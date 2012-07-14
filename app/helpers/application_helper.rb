@@ -13,9 +13,10 @@ module ApplicationHelper
   end
 
 
-  # Only activate Google Fonts when production
+  # Google Fonts tag (when production)
   def google_font_tag
-    stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Cuprum|Open+Sans:400,700' if Rails.env.production?
+    google_url = 'http://fonts.googleapis.com/css?family=Cuprum|Open+Sans:400,700'
+    stylesheet_link_tag google_url if Rails.env.production?
   end
 
 

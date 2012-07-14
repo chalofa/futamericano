@@ -15,7 +15,7 @@ class Division < ActiveRecord::Base
   attr_reader :full_name
 
   default_scope order: 'conference ASC, position'
-  scope :for_standings, includes(teams: :standing).order('standings.won DESC, standings.tied DESC, standings.net DESC, standings.pf DESC')
+  scope :for_standings, order('won DESC, tied DESC, net DESC, pf DESC').includes(teams: :standing).
   scope :afc, where(conference: 'AFC').for_standings
   scope :nfc, where(conference: 'NFC').for_standings
 
