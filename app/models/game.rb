@@ -53,14 +53,13 @@ class Game < ActiveRecord::Base
 
 
   def result
-    return if away_score.nil? || home_score.nil?
-    if home_score > away_score
-      :home_winner
-    elsif home_score < away_score
-      :away_winner
-    else
-      :tie
+    diff = home_score - away_score
+    if diff > 0 then :home_winner
+    elsif diff < 0 then :away_winner
+    else :tie
     end
+  rescue NoMethodError
+    return
   end
 
   # converts the state for sorting purposes
