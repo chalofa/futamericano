@@ -6,17 +6,17 @@ class Season < ActiveRecord::Base
   include CommonStates
 
   belongs_to :team
-  has_many :weeks, :dependent => :destroy
+  has_many :weeks, dependent: :destroy
   has_many :games
   belongs_to :week
 
   validates_uniqueness_of :year
 
-  delegate :short, :to => :team, :prefix => :team
+  delegate :short, to: :team, prefix: :team
 
   default_scope order('year DESC')    #Last seasons first...
-  #First season that is being played or scheduled for start (off-season)
-  scope :current, where(state: ['active', 'pending']).order('year ASC').limit(1)
+  # season that is being played or scheduled for start (off-season)
+  scope :current, where(state: %w(active pending)).order('year ASC').limit(1)
 
 
   def to_s
