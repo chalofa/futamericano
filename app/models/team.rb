@@ -25,7 +25,7 @@ class Team < ActiveRecord::Base
   class << self
     # finds by short, but if it couldn't be found, try with the name
     def find_by_short_or_name(search)
-      Team.find_by_short(search) || Team.find_by_name(search)
+      find_by_short(search) || find_by_name(search)
     end
   end
 
