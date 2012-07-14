@@ -15,17 +15,17 @@ rbenv local $CC_RUBY
 # TODO: remove the --pre after bundler version 1.2 is released
 which bundle > /dev/null || gem install bundler --re
 
-echo "-- Project dependencies"
+echo "-- Project Dependencies"
 export DISPLAY=:0.0
 bundle install > $LOG_DIR/bundle.log 2>&1
 bundle exec rake db:reset > $LOG_DIR/db_reset.log 2>&1
 bundle exec rake db:test:prepare > $LOG_DIR/test_prepare.log 2>&1
 
-echo "-- Running tests"
+echo "-- Running Tests..."
 bundle exec rake
 EXIT_CODE=$?
 
-echo "-- Metrics"
+echo "-- Code Metrics"
 which rails_best_practices > /dev/null || gem install rails_best_practices; rbenv rehash
 rails_best_practices --with-git -o app,lib,config -x \.rake$,config/initializers/
 
