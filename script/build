@@ -11,25 +11,25 @@ mkdir -p $LOG_DIR
 eval "$(rbenv init -)"
 rbenv local $CC_RUBY
 
-# Bundler installed?
+echo -e "\n-- Requirements"
 # TODO: remove the --pre after bundler version 1.2 is released
 which bundle > /dev/null || gem install bundler --re
 which rails_best_practices > /dev/null || gem install rails_best_practices
 which reek > /dev/null || gem install reek
 rbenv rehash
 
-echo -e "\n\n-- Project Dependencies"
+echo -e "\n-- Project Dependencies"
 export DISPLAY=:0.0
 bundle install > $LOG_DIR/bundle.log 2>&1
 rbenv rehash
 bundle exec rake db:reset > $LOG_DIR/db_reset.log 2>&1
 bundle exec rake db:test:prepare > $LOG_DIR/test_prepare.log 2>&1
 
-echo -e "\n\n-- Running Tests..."
+echo -e "\n-- Running Tests..."
 bundle exec rake
 EXIT_CODE=$?
 
-echo -e "\n\n-- Code Metrics"
+echo -e "\n-- Code Metrics"
 cp -r ./coverage $LOG_DIR/../
 bundle exec rake quality
 reek -q app
