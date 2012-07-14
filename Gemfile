@@ -43,6 +43,7 @@ group :test do
   gem 'database_cleaner'
   gem 'fivemat'
   gem 'simplecov', :require => false
+  gem 'spork-rails'
 end
 
 group :production do
