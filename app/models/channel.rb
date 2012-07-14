@@ -8,6 +8,7 @@ class Channel < ActiveRecord::Base
   has_many :channels_games
   has_many :games, through: :channels_games
 
+  attr_accessible :name, :short, :state, :url
 
   validates_uniqueness_of :short
   validates_presence_of :name, :short, :state

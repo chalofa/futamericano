@@ -5,9 +5,6 @@
 class Team < ActiveRecord::Base
   include CommonStates
 
-  validates_uniqueness_of :name, :short
-  validates_length_of :short, in: 2..3
-
   belongs_to  :division
   has_one     :coach
   has_one     :standing, conditions: ['standings.state = ?', 'active']
@@ -20,7 +17,13 @@ class Team < ActiveRecord::Base
   scope :active, where(state: :active)
   scope :active_with_coaches, active.includes(:coach)
 
+  attr_accessible :name, :short, :city, :web, :stadium, :area, :division_id,
+                  :year, :state
   attr_reader :full_name
+
+  validates_uniqueness_of :name, :short
+  validates_length_of :short, in: 2..3
+
 
   class << self
     # finds by short, but if it couldn't be found, try with the name

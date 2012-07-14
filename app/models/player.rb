@@ -5,12 +5,14 @@
 class Player < ActiveRecord::Base
   include CommonStates
 
+  belongs_to  :team
+
+  attr_accessible :name, :pos, :debut, :state, :team_id
+
   validates_uniqueness_of :name, scope: :pos, case_sensitive: false
   validates_length_of     :name,  minimum: 10
   validates_length_of     :debut, is: 4
   validates_length_of     :pos,   in: 2..3
-
-  belongs_to  :team
 
 end
 

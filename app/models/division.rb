@@ -7,17 +7,18 @@ class Division < ActiveRecord::Base
 
   has_many :teams
 
-  validates_uniqueness_of :name, scope: :conference
-  validates_length_of     :name, in: 4..5
-  validates_length_of     :conference, is: 3
-  validates_uniqueness_of :position, scope: :conference
-
-  attr_reader :full_name
-
   default_scope order: 'conference ASC, position'
   scope :for_standings, order('won DESC, tied DESC, net DESC, pf DESC').includes(teams: :standing)
   scope :afc, where(conference: 'AFC').for_standings
   scope :nfc, where(conference: 'NFC').for_standings
+
+  attr_accessible :name, :conference, :position, :state
+  attr_reader :full_name
+
+  validates_uniqueness_of :name, scope: :conference
+  validates_length_of     :name, in: 4..5
+  validates_length_of     :conference, is: 3
+  validates_uniqueness_of :position, scope: :conference
 
 
   # long division name (with the Conference name as prefix)

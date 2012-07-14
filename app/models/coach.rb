@@ -5,10 +5,12 @@
 class Coach < ActiveRecord::Base
   include CommonStates
 
+  belongs_to  :team
+
+  attr_accessible :name, :team_id, :state
+
   validates_uniqueness_of :name
   validates_length_of     :name, minimum: 5
-
-  belongs_to  :team
 
 end
 

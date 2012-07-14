@@ -10,13 +10,14 @@ class Season < ActiveRecord::Base
   has_many :games
   belongs_to :week
 
+  default_scope order('year DESC')    # last seasons first...
+  scope :current, where(state: %w(active pending)).order('year ASC').limit(1)
+
+  attr_accessible :year, :state, :week_id, :team_id, :starts_at, :ends_ats
+
   validates_uniqueness_of :year
 
   delegate :short, to: :team, prefix: :team
-
-  default_scope order('year DESC')    #Last seasons first...
-  # season that is being played or scheduled for start (off-season)
-  scope :current, where(state: %w(active pending)).order('year ASC').limit(1)
 
 
   def to_s

@@ -9,19 +9,21 @@ class Week < ActiveRecord::Base
   has_many    :games, dependent: :destroy
   has_many    :settings, as: :settingable
 
-  delegate :year, to: :season, prefix: :season, allow_nil: true
-
-  #Only allow a unique week name per Season
-  validates_uniqueness_of :number, scope: [:season_id, :week_type]
-  validates_numericality_of :number
-  validates_length_of :week_type, in: 3..4
-
   default_scope order('season_id DESC, id ASC')
   scope :active, where(state: :active)
   scope :all_but, lambda { |week| where('id != ?', week.id)}
   scope :by_number, lambda { |number| where(number: number) }
   scope :by_season, lambda { |season| where(season: season) }
   scope :by_week_type, lambda { |week_type| where(week_type: week_type) }
+
+  attr_accessible :season_id, :week_type, :state, :number
+
+  #Only allow a unique week name per Season
+  validates_uniqueness_of :number, scope: [:season_id, :week_type]
+  validates_numericality_of :number
+  validates_length_of :week_type, in: 3..4
+
+  delegate :year, to: :season, prefix: :season, allow_nil: true
 
 
   class << self
