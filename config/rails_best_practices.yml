@@ -20,8 +20,8 @@ RemoveEmptyHelpersCheck: { }
 RemoveTabCheck: { }
 RemoveTrailingWhitespaceCheck: { }
 #TODO: uncomment after adding all the code
-#RemoveUnusedMethodsInControllersCheck: { except_methods: [] }
-#RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
+RemoveUnusedMethodsInControllersCheck: { except_methods: [] }
+RemoveUnusedMethodsInHelpersCheck: { except_methods: [] }
 #RemoveUnusedMethodsInModelsCheck: { except_methods: [] }
 ReplaceComplexCreationWithFactoryMethodCheck: { attribute_assignment_count: 2 }
 ReplaceInstanceVariableWithLocalVariableCheck: { }
