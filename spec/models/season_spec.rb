@@ -28,19 +28,3 @@ end
 
 
 
-# == Schema Information
-#
-# Table name: seasons
-#
-#  id         :integer         not null, primary key
-#  year       :integer         default(2011), not null
-#  state      :string(255)     default("disabled"), not null
-#  week_id    :integer
-#  team_id    :integer
-#  league_id  :integer
-#  created_at :datetime        not null
-#  updated_at :datetime        not null
-#  starts_at  :datetime
-#  ends_at    :datetime
-#
-

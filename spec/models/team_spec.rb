@@ -63,22 +63,3 @@ end
 
 
 
-# == Schema Information
-#
-# Table name: teams
-#
-#  id          :integer(4)      not null, primary key
-#  name        :string(255)     not null
-#  short       :string(255)     not null
-#  city        :string(255)     not null
-#  web         :string(255)     not null
-#  stadium     :string(255)     not null
-#  area        :string(255)     not null
-#  division_id :integer(4)
-#  league_id   :integer(4)
-#  year        :integer(4)      not null
-#  state       :string(255)     default("disabled"), not null
-#  created_at  :datetime
-#  updated_at  :datetime
-#
-

@@ -104,17 +104,3 @@ end
 
 
 
-# == Schema Information
-#
-# Table name: weeks
-#
-#  id         :integer(4)      not null, primary key
-#  season_id  :integer(4)      not null
-#  week_type  :string(255)     not null
-#  state      :string(255)     default("disabled"), not null
-#  number     :integer(4)
-#  league_id  :integer(4)
-#  created_at :datetime
-#  updated_at :datetime
-#
-

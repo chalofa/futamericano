@@ -16,16 +16,3 @@ end
 
 
 
-# == Schema Information
-#
-# Table name: divisions
-#
-#  id         :integer(4)      not null, primary key
-#  name       :string(255)     not null
-#  conference :string(255)     not null
-#  position   :integer(4)      not null
-#  state      :string(255)     default("disabled"), not null
-#  created_at :datetime
-#  updated_at :datetime
-#
-
