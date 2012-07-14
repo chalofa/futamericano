@@ -28,7 +28,7 @@ bundle exec rake
 EXIT_CODE=$?
 
 echo "-- Code Metrics"
-ln -s ./coverage $LOG_DIR/
+cp -r ./coverage $LOG_DIR/../
 which rails_best_practices > /dev/null || gem install rails_best_practices; rbenv rehash
 rails_best_practices --silent --without-color -o app,lib,config -x \.rake$,config/initializers/
 
