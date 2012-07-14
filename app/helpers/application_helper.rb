@@ -22,7 +22,7 @@ module ApplicationHelper
 
   # Create a link using sprites (hidden text for text browsers and bots)
   def sprite_link_to(text, uri, html_options)
-    link_to content_tag(:span, text, :class => :hide), uri, html_options
+    link_to content_tag(:span, text, class: :hide), uri, html_options
   end
 
 end
