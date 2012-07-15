@@ -13,7 +13,7 @@ class Season < ActiveRecord::Base
   default_scope order('year DESC')    # last seasons first...
   scope :current, where(state: %w(active pending)).order('year ASC').limit(1)
 
-  attr_accessible :year, :state, :week_id, :team_id, :starts_at, :ends_ats
+  attr_accessible :year, :state, :week_id, :team_id, :starts_at, :ends_at
 
   validates_uniqueness_of :year
 
