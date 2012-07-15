@@ -1,0 +1,14 @@
+es:
+  resources:
+    teams:      'equipos'
+  resource:
+    channels:   'guia_tv'
+    contacts:   'contacto'
+    scores:     'tablero'
+    soon:       'pronto'
+    standings:  'posiciones'
+  named_routes_path:
+    home:       'inicio'
+  path_names:
+    new:        'nuevo'
+    edit:       'editar'

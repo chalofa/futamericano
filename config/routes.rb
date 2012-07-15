@@ -3,7 +3,28 @@ Futamericano::Application.routes.draw do
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  resource :soon
+
+  localized([:es, :en]) do
+    resource :soon, only: :show, controller: :soon
+    #resources :teams
+    #resource :home, :only => :show, :controller => :home
+    #resource :scores, :only => :show
+    #resource :standings, :only => :show
+    #resource :contacts, :only => [:show, :create]
+    #resource :channels, :only => :show
+  end
+
+
+  #namespace :live do
+  #  resource :scores, :only => :show
+  #end
+
+
+  #namespace :api do
+  #  resource :live_scores, :only => :show, :path => 'live'
+  #  resource :game_channels, :only => :show
+  #end
+
 
   root to: 'soon#show'
 
