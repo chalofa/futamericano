@@ -112,7 +112,7 @@ ActiveAdmin.setup do |config|
   # config.before_filter :do_something_awesome
 
   # set a default locale for ActiveAdmin: http://bit.ly/Muwidt
-  config.before_filter :set_admin_locale
+  config.before_filter -> { I18n.locale = params[:locale] || :en }
 
   # == Register Stylesheets & Javascripts
   #
