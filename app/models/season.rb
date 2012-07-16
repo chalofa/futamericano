@@ -12,6 +12,7 @@ class Season < ActiveRecord::Base
 
   default_scope order('year DESC')    # last seasons first...
   scope :current, where(state: %w(active pending)).order('year ASC').limit(1)
+  scope :pending, where(state: :pending).order('year ASC')
 
   attr_accessible :year, :state, :week_id, :team_id, :starts_at, :ends_at
 
@@ -20,6 +21,15 @@ class Season < ActiveRecord::Base
   delegate :short, to: :team, prefix: :team
 
 
+  class << self
+    # next season to be played
+    def next_pending
+      pending.first
+    end
+  end
+
+
+  # human readable output
   def to_s
     champion = team ? ", champion is: #{team_short}" : ''
     "#{year} Season: #{state.capitalize}#{champion}"
