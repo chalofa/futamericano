@@ -1,11 +1,7 @@
 #main
-  padding-top: 10px
-  padding-bottom: 40px
+  @extend .background_squares
+  +border-radius(6px)
+  +clearfix
+  margin: 140px 25px 70px // top includes header height (for the absolute position)
+  padding: 20px
   text-align: center
-
-  section.complete
-    @extend .background_squares
-    +clearfix
-    +border-radius(6px)
-    margin: 10px 25px 30px
-    padding: 20px
