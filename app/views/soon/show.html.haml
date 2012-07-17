@@ -1,4 +1,12 @@
 %h1
   = t('.season', year: @season.year)
 
-#countdown
+#countdown{:'data-start' => @season.starts_at}
+
+
+:coffeescript
+  wrapper = $('#countdown')
+  season_start = wrapper.data('start')
+
+  wrapper.countdown
+    timestamp: new Date(Date.parse(season_start))
