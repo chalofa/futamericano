@@ -21,7 +21,7 @@ end
 #--------------------------------------------------------------------
 Then /^(?:|I )should see the Soon counter$/ do
   within 'section#main.soon' do
-    page.should have_content('days')
+    page.should have_content('día')
   end
 end
 
