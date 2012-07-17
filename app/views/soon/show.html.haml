@@ -3,6 +3,12 @@
 
 #countdown{:'data-start' => @season.starts_at}
 
+%ul.legends
+  %li= t '.days'
+  %li= t '.hours'
+  %li= t '.minutes'
+  %li= t '.seconds'
+
 
 :coffeescript
   wrapper = $('#countdown')

@@ -141,4 +141,8 @@ es:
 
   soon:
     show:
-      season: "Temporada %{year}:"
+      days:     "días"
+      hours:    "horas"
+      minutes:  "mins"
+      season:   "Temporada %{year}:"
+      seconds:  "segs"
