@@ -3,7 +3,8 @@ Feature: Home page
   I should be able to see the main Home page
 
   Background:
-    Given I am on the Home page
+    Given a pending Season exists
+      And I am on the Home page
 
   Scenario: Menu
     Then I should see the main Menu
