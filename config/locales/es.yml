@@ -138,3 +138,7 @@ es:
 
   legal:
     disclaimer: "Todos los logos y nombres son marcas registradas de cada equipo y la NFL®"
+
+  soon:
+    show:
+      season: "Temporada %{year}:"
