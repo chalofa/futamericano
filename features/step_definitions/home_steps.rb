@@ -27,10 +27,9 @@ end
 
 Then /^(?:|I )should see the main Footer$/ do
   within 'footer#bottom' do
-    pending '#TODO: change copyright year!' #TODO
     page.should have_content('©2012.')
     page.should have_content('FutAmericano.com.')
-    page.should have_content('Disclaimer')
+    page.should have_content('Todos los logos y nombres son marcas registradas')
   end
 end
 

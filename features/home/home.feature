@@ -9,6 +9,5 @@ Feature: Home page
   Scenario: Menu
     Then I should see the main Menu
 
-  @wip
   Scenario: Footer
     Then I should see the main Footer
