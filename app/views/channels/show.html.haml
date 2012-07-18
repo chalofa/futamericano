@@ -1,0 +1,7 @@
+%h1=t 'channels.TV Guide'
+
+- if @channels.present?
+  = render 'guide', channels: @channels
+
+- else
+  = render 'empty_guide'

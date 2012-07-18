@@ -1,0 +1,14 @@
+%tr
+  %td.hour
+    = game.to_time
+
+  %td.channels
+    =raw channels_to_sprites(channels)
+
+  %td.team.away
+    %span.team_logo{class: "teams_40-#{game.away_team.dshort}"}
+      = game.away_team_full_name
+
+  %td.team.home
+    %span.team_logo{class: "teams_40-#{game.team.dshort}"}
+      = game.team_full_name

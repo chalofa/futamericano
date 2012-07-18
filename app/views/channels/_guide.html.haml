@@ -1,0 +1,12 @@
+%table#channels
+  %legend
+    =t 'channels.week'
+    = humanized_week + ':'
+
+  - game_date = nil
+  - channels.each do |game|
+    - if game.to_date != game_date
+      = render 'game_date', game: game
+      - game_date = game.to_date
+
+    = render 'channel', channels: game.channels, game: game
