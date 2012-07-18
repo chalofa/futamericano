@@ -26,8 +26,8 @@ class Game < ActiveRecord::Base
   attr_accessible :week_id, :team_id, :away_team_id, :home_score, :away_score,
                   :state, :game_date, :scheduled_at, :time_over
 
-  delegate :standing, :stadium, to: :team, prefix: true
-  delegate :standing, to: :away_team, prefix: true
+  delegate :full_name, :standing, :stadium, to: :team, prefix: true
+  delegate :full_name, :standing, to: :away_team, prefix: true
   delegate :down, :to_go, :yard_line, to: :progress, prefix: true, allow_nil: true
 
 
