@@ -23,7 +23,8 @@ class Week < ActiveRecord::Base
   validates_numericality_of :number
   validates_length_of :week_type, in: 3..4
 
-  delegate :year, to: :season, prefix: :season, allow_nil: true
+  delegate :year, to: :season, prefix: true, allow_nil: true
+  delegate :with_channels, to: :games, prefix: true, allow_nil: true
 
 
   class << self
