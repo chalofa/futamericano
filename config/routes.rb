@@ -5,13 +5,13 @@ Futamericano::Application.routes.draw do
 
 
   localized([:es, :en]) do
+    resource :channels, only: :show
     resource :soon, only: :show, controller: :soon
     #resources :teams
     #resource :home, :only => :show, :controller => :home
     #resource :scores, :only => :show
     #resource :standings, :only => :show
     #resource :contacts, :only => [:show, :create]
-    #resource :channels, :only => :show
   end
 
 

@@ -2,7 +2,7 @@ es:
   resources:
     teams:      'equipos'
   resource:
-    channels:   'guia_tv'
+    channels:   'tv'
     contacts:   'contacto'
     scores:     'tablero'
     soon:       'pronto'
