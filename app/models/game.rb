@@ -24,7 +24,8 @@ class Game < ActiveRecord::Base
   #scope :for_scores, include: [:channels, [team: :standing], [away_team: :standing], :progress]
 
   attr_accessible :week_id, :team_id, :away_team_id, :home_score, :away_score,
-                  :state, :game_date, :scheduled_at, :time_over
+                  :state, :game_date, :scheduled_at, :time_over, :default_sort
+  attr_protected  :default_sort, as: :default
 
   delegate :full_name, :standing, :stadium, to: :team, prefix: true
   delegate :full_name, :standing, to: :away_team, prefix: true

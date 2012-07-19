@@ -129,3 +129,10 @@ ActiveAdmin.setup do |config|
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
 end
+
+
+# Allow saving to attr_accessible fields in ActiveAdmin: http://bit.ly/NYnaRK #TODO: change it?
+ActiveAdmin::ResourceController.class_eval do
+  # this InheritedResources method will send the role back to the controller for the assign
+  with_role :admin
+end
