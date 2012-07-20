@@ -7,7 +7,7 @@ class Week < ActiveRecord::Base
 
   belongs_to  :season
   has_many    :games, dependent: :destroy
-  has_many    :settings, as: :settingable
+  #has_many    :settings, as: :settingable
 
   default_scope order('season_id DESC, id ASC')
   scope :active, where(state: :active)
@@ -16,7 +16,7 @@ class Week < ActiveRecord::Base
   scope :by_season, lambda { |season| where(season: season) }
   scope :by_week_type, lambda { |week_type| where(week_type: week_type) }
 
-  attr_accessible :season_id, :week_type, :state, :number
+  attr_accessible :number, :season, :season_id, :state, :week_type
 
   #Only allow a unique week name per Season
   validates_uniqueness_of :number, scope: [:season_id, :week_type]
