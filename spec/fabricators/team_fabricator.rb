@@ -14,3 +14,9 @@ Fabricator :team_colts, from: :team, aliases: :team_default do
   short       'IND'
   city        'Indianapolis'
 end
+
+Fabricator :team_default_away, from: :team do
+  name        '49ers'
+  short       'SF'
+  city        'San Francisco'
+end
