@@ -19,10 +19,10 @@ end
 #
 # Table name: channels_games
 #
-#  id         :integer         primary key
+#  id         :integer         not null, primary key
 #  game_id    :integer
 #  channel_id :integer
-#  created_at :timestamp
-#  updated_at :timestamp
+#  created_at :datetime
+#  updated_at :datetime
 #
 

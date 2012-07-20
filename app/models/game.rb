@@ -100,7 +100,7 @@ end
 #
 # Table name: games
 #
-#  id             :integer         primary key
+#  id             :integer         not null, primary key
 #  week_id        :integer         not null
 #  team_id        :integer
 #  away_team_id   :integer
@@ -109,10 +109,10 @@ end
 #  league_id      :integer
 #  state          :string(255)     default("pending"), not null
 #  game_date      :date
-#  scheduled_at   :timestamp
+#  scheduled_at   :datetime
 #  time_over      :boolean         default(FALSE), not null
-#  created_at     :timestamp
-#  updated_at     :timestamp
+#  created_at     :datetime
+#  updated_at     :datetime
 #  default_sort   :integer         default(1), not null
 #  channels_count :integer         default(0)
 #
