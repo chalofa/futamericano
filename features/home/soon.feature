@@ -6,6 +6,6 @@ Feature: Soon Countdown
     Given a pending Season exists
       And I am on the Home page
 
-  @wip
   Scenario: Countdown for next Season
     Then I should see the Soon counter
+      And I should see the next Game info

@@ -4,7 +4,7 @@
 #  GIVEN
 #--------------------------------------------------------------------
 Given /^a pending Season exists$/ do
-  @season = Fabricate :season_pending
+  @season = Fabricate :season_default_pending
 end
 
 
@@ -22,6 +22,17 @@ end
 Then /^(?:|I )should see the Soon counter$/ do
   within 'section#main.soon' do
     page.should have_content('día')
+    page.should have_content('hora')
+    page.should have_content('min')
+    page.should have_content('seg')
+  end
+end
+
+Then /^(?:|I )should see the next Game info$/ do
+  within 'section#main.soon' do
+    page.should have_content('Próximo juego:')
+    page.should have_content('SF')
+    page.should have_content('IND')
   end
 end
 

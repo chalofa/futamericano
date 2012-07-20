@@ -9,6 +9,8 @@
   %li= t '.minutes'
   %li= t '.seconds'
 
+= render 'game', game: @game
+
 
 :coffeescript
   wrapper = $('#countdown')

@@ -146,3 +146,5 @@ es:
       minutes:  "mins"
       season:   "Temporada %{year}:"
       seconds:  "segs"
+    game:
+      next_game: "Próximo juego:"

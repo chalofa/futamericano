@@ -1,0 +1,6 @@
+%section.game
+  %abbr= t('.next_game')
+
+  = render 'team', team: game.away_team
+  vs.
+  = render 'team', team: game.team
