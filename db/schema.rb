@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120714045156) do
+ActiveRecord::Schema.define(:version => 20120720052850) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.string   "short",                              :null => false
     t.string   "state",      :default => "disabled", :null => false
     t.string   "url"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "channels", ["short"], :name => "index_channels_on_short", :unique => true
@@ -62,8 +62,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
   create_table "channels_games", :force => true do |t|
     t.integer  "game_id"
     t.integer  "channel_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "channels_games", ["channel_id"], :name => "index_channels_games_on_channel_id"
@@ -74,8 +74,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.string   "name",                               :null => false
     t.integer  "team_id"
     t.string   "state",      :default => "disabled", :null => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "coaches", ["name"], :name => "index_coaches_on_name", :unique => true
@@ -88,8 +88,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.string   "conference",                         :null => false
     t.integer  "position",                           :null => false
     t.string   "state",      :default => "disabled", :null => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "divisions", ["conference", "name", "position"], :name => "index_divisions_on_conference_and_name_and_position"
@@ -107,8 +107,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.date     "game_date"
     t.datetime "scheduled_at"
     t.boolean  "time_over",      :default => false,     :null => false
-    t.datetime "created_at",                            :null => false
-    t.datetime "updated_at",                            :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.integer  "default_sort",   :default => 1,         :null => false
     t.integer  "channels_count", :default => 0
   end
@@ -123,8 +123,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.integer  "debut",                              :null => false
     t.string   "state",      :default => "disabled", :null => false
     t.integer  "team_id"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "players", ["name", "pos"], :name => "index_players_on_name_and_pos", :unique => true
@@ -148,8 +148,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.string   "home_scores"
     t.string   "away_scores"
     t.boolean  "red_zone"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "progresses", ["game_id"], :name => "index_progresses_on_game_id", :unique => true
@@ -159,14 +159,12 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.string   "state",      :default => "disabled", :null => false
     t.integer  "week_id"
     t.integer  "team_id"
-    t.integer  "league_id"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.datetime "starts_at"
     t.datetime "ends_at"
   end
 
-  add_index "seasons", ["league_id"], :name => "index_seasons_on_league_id"
   add_index "seasons", ["state", "team_id"], :name => "index_seasons_on_state_and_team_id"
   add_index "seasons", ["state"], :name => "index_seasons_on_state"
   add_index "seasons", ["team_id"], :name => "index_seasons_on_team_id"
@@ -185,8 +183,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.integer  "the_value"
     t.datetime "last_at"
     t.integer  "settingable_id"
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "settings", ["last_at"], :name => "index_settings_on_last_at"
@@ -210,8 +208,8 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.string   "tied_ids"
     t.string   "week_type"
     t.string   "state",      :default => "disabled", :null => false
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "standings", ["season_id", "state"], :name => "index_standings_on_season_id_and_state"
@@ -227,15 +225,13 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.string   "stadium",                             :null => false
     t.string   "area",                                :null => false
     t.integer  "division_id"
-    t.integer  "league_id"
     t.integer  "year",                                :null => false
     t.string   "state",       :default => "disabled", :null => false
-    t.datetime "created_at",                          :null => false
-    t.datetime "updated_at",                          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   add_index "teams", ["division_id"], :name => "index_teams_on_division_id"
-  add_index "teams", ["league_id"], :name => "index_teams_on_league_id"
   add_index "teams", ["name"], :name => "index_teams_on_name", :unique => true
   add_index "teams", ["short"], :name => "index_teams_on_short", :unique => true
   add_index "teams", ["state"], :name => "index_teams_on_state"
@@ -245,12 +241,10 @@ ActiveRecord::Schema.define(:version => 20120714045156) do
     t.string   "week_type",                          :null => false
     t.string   "state",      :default => "disabled", :null => false
     t.integer  "number"
-    t.integer  "league_id"
-    t.datetime "created_at",                         :null => false
-    t.datetime "updated_at",                         :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
-  add_index "weeks", ["league_id"], :name => "index_weeks_on_league_id", :unique => true
   add_index "weeks", ["season_id", "week_type", "number", "state"], :name => "index_weeks_on_season_id_and_week_type_and_number_and_state"
   add_index "weeks", ["season_id", "week_type", "number"], :name => "index_weeks_on_season_id_and_week_type_and_number", :unique => true
   add_index "weeks", ["season_id", "week_type", "state"], :name => "index_weeks_on_season_id_and_week_type_and_state"
