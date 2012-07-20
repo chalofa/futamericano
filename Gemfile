@@ -28,6 +28,7 @@ end
 group :development, :test do
   gem 'annotate', '~> 2.4.1.beta1'    # TODO: remove after 2.4.1 release http://bit.ly/w19m7c
   gem 'capistrano'
+  gem 'database_cleaner'
   gem 'fabrication'
   gem 'faker'
   gem 'heroku'
@@ -42,7 +43,6 @@ end
 
 group :test do
   gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
   gem 'fivemat'
   gem 'simplecov', :require => false
   gem 'spork-rails'
