@@ -27,8 +27,8 @@ class Game < ActiveRecord::Base
                   :state, :game_date, :scheduled_at, :time_over, :default_sort
   attr_protected  :default_sort, as: :default
 
-  delegate :full_name, :standing, :stadium, to: :team, prefix: true
-  delegate :full_name, :standing, to: :away_team, prefix: true
+  delegate :short, :full_name, :standing, :stadium, to: :team, prefix: true
+  delegate :short, :full_name, :standing, to: :away_team, prefix: true
   delegate :down, :to_go, :yard_line, to: :progress, prefix: true, allow_nil: true
 
 
