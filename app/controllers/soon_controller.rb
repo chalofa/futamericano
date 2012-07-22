@@ -11,7 +11,7 @@ class SoonController < ApplicationController
   private
   def find_next_season
     @season = Season.next_pending
-    @game = @season.weeks.current.games.first # TODO: create finder scope: .next_game
+    @game = @season.weeks.current.games.pending.first # TODO: create finder scope: .next_game
   end
 
 end
