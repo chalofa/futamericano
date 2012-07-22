@@ -7,7 +7,7 @@ class Season < ActiveRecord::Base
 
   belongs_to :team
   has_many :weeks, dependent: :destroy
-  has_many :games
+  has_many :games, through: :weeks
   belongs_to :week
 
   default_scope order('year DESC')    # last seasons first...
