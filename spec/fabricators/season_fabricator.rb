@@ -17,9 +17,9 @@ end
 Fabricator :season_default_pending, from: :season_pending do
   year        Time.zone.now.year
   after_create do |season|
-    season.weeks << Fabricate(:week_default_pending, season: season)
-    #season.weeks << Fabricate(:week_default_active, season: season)
     #season.weeks << Fabricate(:week_default_finished, season: season)
+    season.weeks << Fabricate(:week_default_active, season: season)
+    season.weeks << Fabricate(:week_default_pending, season: season)
   end
 end
 
