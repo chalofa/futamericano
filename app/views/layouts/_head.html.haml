@@ -5,6 +5,8 @@
 = stylesheet_link_tag :application
 /[if lt IE 9]
   = stylesheet_link_tag :ie
+  = javascript_include_tag 'http://html5shim.googlecode.com/svn/trunk/html5.js'
+
 = google_font_tag
 
 %meta{charset: 'utf-8'}
