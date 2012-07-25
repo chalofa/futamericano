@@ -1,8 +1,8 @@
 #main.soon
   #countdown
+    @extend .text_bold
     font-family: $baseFontFamily
     font-size: 65px // bigger size
-    font-weight: bold
     padding-top: 80px
     width: auto
     // overwrite defaults for separators
@@ -23,4 +23,12 @@
     li
       width: 195px
       &:first-child
-        font-weight: bold
+        @extend .text_bold
+
+  .game
+    abbr
+      @extend .text_bold
+      margin: 0 15px
+      font-weight: bold
+      &:first-child
+        margin-left: 0
