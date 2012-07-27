@@ -7,7 +7,7 @@ describe SoonController do
   describe 'GET :show' do
     before do
       Season.stub next_pending: season
-      season.stub_chain(:weeks, :current, :games, :first).and_return game # TODO: use a scope!
+      season.stub_chain(:weeks, :current, :games, :pending, :first).and_return game # TODO: use a scope!
       get :show
     end
 
