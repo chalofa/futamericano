@@ -2,7 +2,7 @@ Fabricator :team do
   area        { Faker::Address.state }
   city        { Faker::Address.city }
   name        { Faker::Name.first_name }
-  short       { Faker::Name.first_name.first(3) }
+  short       { SecureRandom.hex.last(3).upcase }
   stadium     { Faker::Name.last_name }
   state       :active
   web         { Faker::Internet.domain_name }
