@@ -1,0 +1,11 @@
+rvm:
+  - 1.9.3
+
+before_install:
+  - gem install bundler --pre
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
+  - bundle exec rake db:create:all db:schema:load 2>&1 | tail -n 3
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"
