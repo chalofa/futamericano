@@ -1,0 +1,18 @@
+travis: &travis
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  host: 127.0.0.1
+  username: postgres
+
+development:
+  <<: *travis
+  database: development
+
+test:
+  <<: *travis
+  database: test
+
+production:
+  <<: *travis
+  database: production
