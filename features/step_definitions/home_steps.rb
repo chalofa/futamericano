@@ -29,10 +29,10 @@ Then /^(?:|I )should see the Soon counter$/ do
 end
 
 Then /^(?:|I )should see the next Game info$/ do
-  within 'section#main.soon' do
+  within '#main.soon .game' do
     page.should have_content('Próximo juego:')
-    page.should have_content('SF')
-    page.should have_content('IND')
+    page.should have_selector('img', alt: 'SF')
+    page.should have_selector('img', alt: 'IND')
   end
 end
 
