@@ -1,9 +1,10 @@
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------
 #   Shows a reverse counter until the season opener
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------
 
 class SoonController < ApplicationController
   before_filter :find_next_season
+  before_filter :find_next_game
 
   def show
   end
@@ -11,7 +12,11 @@ class SoonController < ApplicationController
   private
   def find_next_season
     @season = Season.next_pending
-    @game = @season.weeks.current.games.pending.first # TODO: create finder scope: .next_game
+  end
+
+  def find_next_game
+    # TODO: create finder scope: .next_game
+    @game = @season.weeks.current.games.next_pending
   end
 
 end
