@@ -107,7 +107,7 @@ describe Game do
     before { subject.stub state_value: 1 }
 
     it 'should update the default_sort value' do
-      subject.should_receive(:update_attribute).with(:default_sort, 1)
+      subject.should_receive(:update_column).with(:default_sort, 1)
       subject.update_sort
     end
   end

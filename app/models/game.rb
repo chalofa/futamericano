@@ -89,7 +89,7 @@ class Game < ActiveRecord::Base
 
   # update the sort field when state changes
   def update_sort
-    update_attribute :default_sort, state_value
+    update_column :default_sort, state_value
   end
 
 end
