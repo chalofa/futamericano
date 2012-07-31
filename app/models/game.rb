@@ -3,6 +3,7 @@
 #-------------------------------------------------------------------------
 class Game < ActiveRecord::Base
   include CommonStates
+  include CommonFinders
 
   belongs_to :week
   belongs_to :team

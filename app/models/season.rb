@@ -4,6 +4,7 @@
 
 class Season < ActiveRecord::Base
   include CommonStates
+  include CommonFinders
 
   belongs_to :team
   has_many :weeks, dependent: :destroy
@@ -19,14 +20,6 @@ class Season < ActiveRecord::Base
   validates_uniqueness_of :year
 
   delegate :short, to: :team, prefix: :team
-
-
-  class << self
-    # next season to be played
-    def next_pending
-      pending.first
-    end
-  end
 
 
   # human readable output

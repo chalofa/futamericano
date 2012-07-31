@@ -2,13 +2,6 @@ require 'spec_helper'
 
 describe Season do
 
-  describe '.next_pending' do
-    it 'should find the next pending season' do
-      Season.should_receive(:pending).and_return [subject, :foo, :bar]
-      Season.next_pending.should == subject
-    end
-  end
-
   describe '#to_s' do
     context 'when a completed season' do
       before do
