@@ -295,7 +295,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   pg
-  rails (~> 3.2)
+  rails (= 3.2.6)
   rails_best_practices
   roodi
   rspec-rails
