@@ -1,15 +1,17 @@
-#-------------------------------------------------------------------------
-#   Each year Season (preseason, regular and playoffs)
-#-------------------------------------------------------------------------
+#--------------------------------------------------------------------
+#   Each yearly Season (preseason, regular and playoffs)
+#--------------------------------------------------------------------
 
 class Season < ActiveRecord::Base
   include CommonStates
   include CommonFinders
 
-  belongs_to :team
-  has_many :weeks, dependent: :destroy
-  has_many :games, through: :weeks
-  belongs_to :week
+  belongs_to  :team
+  belongs_to  :week
+  has_many    :weeks, dependent: :destroy
+  has_one     :week, conditions: { state: [:active, :pending] }
+  has_many    :games, through: :weeks
+  has_one     :game, through: :week, conditions: { state: :pending }  # next game
 
   default_scope order('year DESC')    # last seasons first...
   scope :current, where(state: %w(active pending)).order('year ASC').limit(1)

@@ -7,6 +7,7 @@ class Week < ActiveRecord::Base
 
   belongs_to  :season
   has_many    :games, dependent: :destroy
+  has_one     :game, conditions: { state: :pending }
   #has_many    :settings, as: :settingable
 
   default_scope order('season_id DESC, id ASC')
