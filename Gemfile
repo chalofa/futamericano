@@ -13,6 +13,7 @@ gem 'haml-rails'
 gem 'i18n_routing'
 gem 'jbuilder'
 gem 'jquery-rails'
+gem 'rack-google-analytics', :require => 'rack/google-analytics'
 gem 'state_machine'
 
 
